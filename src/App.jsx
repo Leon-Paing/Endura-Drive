@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className='w-screen h-auto flex flex-col items-center top-0 bg-slate-900 font-custom tracking-widest'>
+      <div className='w-screen h-auto flex flex-col items-center top-0 bg-gray-800 font-custom tracking-widest'>
         <Home/>
       </div>
     </>
