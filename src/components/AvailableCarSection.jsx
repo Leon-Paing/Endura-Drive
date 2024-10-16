@@ -14,7 +14,7 @@ const AvailableCarSection = () => {
                 <div className="w-screen h-auto flex flex-wrap justify-between items-center p-3 mt-5">
                     
                     {data.map((car, index)=> {
-                        return(<LazyLoad key={index} className="xl:w-2/7 lg:w-1/2 md:w-1/2 sm:w-1/2 xs:w-full h-[360px] flex flex-col justify-center items-center bg-transparent mb-3">
+                        return(<LazyLoad key={index} className="xl:w-2/7 lg:w-1/2 md:w-1/2 sm:w-1/2 xs:w-full h-[360px] flex flex-col justify-center items-center bg-transparent mb-3" once>
                             <div className="w-11/12 h-[180px] whitespace-nowrap overflow-hidden p-3 bg-black text-white rounded-tl-md rounded-tr-md text-center text-ellipsis">{car.name}</div>
                         <div className="w-11/12 h-[250px] flex justify-center items-center p-0 relative">
                             <img className="w-full h-[210px] object-cover" src={car.bannerPic} alt="" loading="lazy"/>
