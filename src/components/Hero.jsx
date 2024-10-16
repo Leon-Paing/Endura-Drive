@@ -43,7 +43,8 @@ const Hero = () => {
         initial={{ opacity: 0.1 }}
         animate={{ opacity: 1}}
         exit={{ opacity: 0.1}}
-        transition={{ease:circInOut, duration: 2}} 
+        transition={{ease:circInOut, duration: 2}}
+        loading="lazy" 
       />
       </AnimatePresence>
     </LazyLoad>
