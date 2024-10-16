@@ -12,10 +12,10 @@ const Navbar = () => {
                     <div className="w-1/6 flex h-full justify-center items-center p-2">
                         <img className="w-full h-full object-cover" src="./Logo.jpg" alt="" />
                     </div>
-                    <div className="w-4/5 xs:w-4/5 h-full flex flex-col justify-end items-end p-0">
+                    <div className="w-5/6 h-full flex flex-col justify-end items-end p-0">
                         <div className="w-full h-2/3 flex justify-end justify-items-end items-center text-white pr-0 gap-1 m-0">
-                            <div className="xl:w-96 xs:w-[500px] h-[40px] flex text-center justify-center items-center xl:p-3 lg:p-3 md:p-3 xs:p-4 xl:text-base sm:text-sm xs:text-xxxs text-slate-100"><FaLocationDot className="text-red-600 text-base"/> &nbsp;KabarAye Pagoda Road, Yangon, Myanmar</div>
-                            <div className="xl:w-40 xs:w-[380px] h-full flex text-center justify-center items-center xl:text-base lg:text-base md:text-base sm:text-sm xs:text-xxxs"><FaPhone className="text-red-600 text-sm"/>&nbsp; +95 9776357441</div>
+                            <div className="xl:w-96 xs:w-[510px] h-[40px] flex text-center justify-center items-center xl:p-3 lg:p-3 md:p-3 xs:p-4 xl:text-base sm:text-sm xs:text-xxxs text-slate-100"><FaLocationDot className="text-red-600 text-base"/> &nbsp;KabarAye Pagoda Road, Yangon, Myanmar</div>
+                            <div className="xl:w-40 xs:w-[400px] h-full flex text-center justify-center items-center xl:text-base lg:text-base md:text-base sm:text-sm xs:text-xxxs"><FaPhone className="text-red-600 text-sm"/>&nbsp; +95 9776357441</div>
                             <div className="xl:w-40 md:w-36 sm:w-36 xs:w-60 xs:h-9 xl:h-full lg:h-full md:h-full flex bg-red-600 text-center justify-center items-center cursor-pointer hover:bg-red-500 rounded-sm xl:text-base lg:text-base md:text-base sm:text-xs xs:text-xxs" href="">My Garage ({garage})</div>
                         </div>
                         <div className="w-4/5 h-2/3 flex justify-end justify-items-end items-center text-white p-1 gap-1">
