@@ -33,7 +33,7 @@ const Hero = () => {
   }, [currentIndex, HeroImages]);
 
   return (
-    <LazyLoad className="w-screen xl:h-screen lg:h-[500px] md:h-[500px] sm:h-[400px] xs:h-[400px]  flex justify-center items-center p-0 m-0 overflow-clip relative shadow-xl">
+    <LazyLoad className="w-screen xl:h-screen lg:h-[500px] md:h-[500px] sm:h-[400px] xs:h-[400px]  flex justify-center items-center p-0 m-0 overflow-clip relative shadow-xl" once>
       <AnimatePresence>
       <motion.img
         className="flex justify-center items-center w-screen xl:h-[100%] lg:h-[500px] sm:h-[400px] xs:h-[400px] md:h-full object-cover shadow-in transition-all ease-in-out absolute"
