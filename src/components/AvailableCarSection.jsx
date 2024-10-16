@@ -30,7 +30,7 @@ const AvailableCarSection = () => {
                         </LazyLoad>)
                     })}
                 </div>
-                <div className="w-40 flex justify-center items-center h-auto p-3 border-0.5 border-red-600 rounded-md text-white text-center mt-4 text-base  hover:bg-red-600 cursor-pointer">
+                <div className="xl:w-40 lg:w-40 md:w-40 sm:w-48 xs:w-48 flex justify-center items-center h-auto p-3 border-0.5 border-red-600 rounded-md text-white text-center mt-4 text-base  hover:bg-red-600 cursor-pointer">
                     Chase more...<GiCarWheel className="text-slate-400 w-6 h-6"/>
                 </div>
             </div>
