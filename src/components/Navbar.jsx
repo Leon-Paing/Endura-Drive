@@ -14,7 +14,7 @@ const Navbar = () => {
                     </div>
                     <div className="w-3/4 xs:w-4/5 h-full flex flex-col justify-end items-end p-0">
                         <div className="w-full h-2/3 flex justify-end justify-items-end items-center text-white pr-0 gap-2 m-0">
-                            <div className="xl:w-96 xs:w-96 h-full flex flex-wrap text-center justify-start items-center p-3 xl:text-base sm:text-sm xs:text-xxxs text-slate-100"><FaLocationDot className="text-red-600 text-base w-1/5"/> &nbsp;KabarAye Pagoda Road, Yangon, Myanmar</div>
+                            <div className="xl:w-96 xs:w-96 h-full flex text-center justify-start items-center p-3 xl:text-base sm:text-sm xs:text-xxxs text-slate-100"><FaLocationDot className="text-red-600 text-base"/> &nbsp;KabarAye Pagoda Road, Yangon, Myanmar</div>
                             <div className="xl:w-40 xs:w-80 h-full flex text-center justify-center items-center xl:text-base lg:text-base md:text-base sm:text-sm xs:text-xxs"><FaPhone className="text-red-600"/>&nbsp; +95 9776357441</div>
                             <div className="xl:w-40 md:w-36 sm:w-36 xs:w-52 xs:h-9 xl:h-full lg:h-full md:h-full flex bg-red-600 text-center justify-center items-center cursor-pointer hover:bg-red-500 rounded-sm xl:text-base lg:text-base md:text-base sm:text-xs xs:text-xxs" href="">My Garage ({garage})</div>
                         </div>
