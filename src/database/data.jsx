@@ -153,7 +153,7 @@ const data = [
         color: "green",
         year: 2019,
         mileage: 2000,
-        price: 3699900,
+        price: 1100000,
         bodyType: "Coupe",
         doors: 2,
         engine: "6.5-liter naturally aspirated V12 engine paired with a 48-volt mild-hybrid system",

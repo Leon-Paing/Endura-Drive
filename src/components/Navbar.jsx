@@ -22,6 +22,10 @@ const Navbar = () => {
         navigate('/contact');
     }
 
+    const handleStocksPage = () => {
+        navigate('/stocks');
+    }
+
     const handleHomePage = () => {
         navigate('/');
     }
@@ -39,7 +43,7 @@ const Navbar = () => {
                             <div className="xl:w-40 md:w-36 sm:w-36 xs:w-60 xs:h-9 xl:h-full lg:h-full md:h-full flex bg-red-600 text-center justify-center items-center cursor-pointer hover:bg-red-500 rounded-sm xl:text-base lg:text-base md:text-base sm:text-xs xs:text-xxs">My Garage ({garage})</div>
                         </div>
                         <div className="w-4/5 h-2/3 flex justify-end justify-items-end items-center text-white p-1 gap-1">
-                            <div className={`${getLinkClass("/stocks")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`}>Stocks</div>
+                            <div className={`${getLinkClass("/stocks")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`}onClick={handleStocksPage}>Stocks</div>
                             <div className={`${getLinkClass("/sell")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`}>Sell</div>
                             <div className={`${getLinkClass("/about")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-16 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`}>About Us</div>
                             <div className={`${getLinkClass("/contact")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`} onClick={handleContactPage}>Contact</div>
