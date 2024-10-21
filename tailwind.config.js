@@ -4,14 +4,21 @@ export default {
     './src/index.css',
     './index.html',
     './src/App.jsx',
-    './src/Home.jsx',
-    './src/Home.jsx',
+    './src/PagesHome.jsx',
+    './src/Pages/Contact.jsx',
+    './src/Pages/Stocks.jsx',
     './src/components/Navbar.jsx',
     './src/components/Hero.jsx',
     './src/components/Banner.jsx',
     './src/components/AvailableCarSection.jsx',
     './src/components/ContactInfo.jsx',
     './src/components/Footer.jsx',
+    './src/components/FilterItems.jsx',
+    './src/components/BrandFilter.jsx',
+    './src/components/ModelFilter.jsx',
+    './src/components/YearFilter.jsx',
+    './src/components/BodyFilter.jsx',
+    
   ],
   theme: {
     extend: {
@@ -34,6 +41,9 @@ export default {
       width:{
         "2/7":"23%",
       },
+      height:{
+        "100": "500px",
+      }
     },
   },
   plugins: [],

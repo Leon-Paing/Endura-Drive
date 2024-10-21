@@ -38,7 +38,7 @@ const StockCars = () => {
 
     return(
         <>
-            <div className="w-screen h-auto flex flex-col justify-center items-center p-2 mt-2 border-t-0.5">
+            <div className="w-screen h-auto flex flex-col justify-center items-center p-2 m-0">
                 <div className="w-screen h-auto flex flex-wrap justify-between items-center p-3 mt-5 border-b-0.5">
                     
                     {sortedCars.map((car, index)=> {
