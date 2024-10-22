@@ -8,6 +8,7 @@ export default {
     './src/Pages/Contact.jsx',
     './src/Pages/Stocks.jsx',
     '/src/Pages/AboutUs.jsx',
+    '/src/Pages/Sell.jsx',
     './src/components/Navbar.jsx',
     './src/components/Hero.jsx',
     './src/components/Banner.jsx',
@@ -23,7 +24,7 @@ export default {
     './src/components/AboutBanner2.jsx',
     './src/components/AboutBanner3.jsx',
     './src/components/aboutHomeLink.jsx',
-    
+    './src/components/SellForm.jsx',
   ],
   theme: {
     extend: {
@@ -48,7 +49,8 @@ export default {
       },
       height:{
         "100": "500px",
-      }
+        "110": "700px",
+      },
     },
   },
   plugins: [],

@@ -18,9 +18,6 @@ const Navbar = () => {
         return location.pathname === path ? "fixed" : "sticky"
     };
 
-    const getClassAbout = (path) => {
-        return location.pathname === path ? "bg-slate-900 bg-opacity-90" : "bg-transparent"
-    };
 
     const handleAboutPage = () => {
         navigate('/about');
@@ -34,13 +31,17 @@ const Navbar = () => {
         navigate('/stocks');
     }
 
+    const handleSellPage = () => {
+        navigate('/sell');
+    }
+
     const handleHomePage = () => {
         navigate('/');
     }
 
     return(
         <>
-            <nav className={`${getClassHome("/")} ${getClassAbout("/about")} w-full xs:text-xxs sm:text-sm md:text-base lg:text-base xl:text-base xs:h-[10vh] sm:h-[12vh] md:h-[15vh] lg:h-[15vh] xl:h-[15vh] backdrop-blur-sm text-slate-100 top-0 p-0 flex justify-between items-center z-50`}>
+            <nav className={`${getClassHome("/")} w-full xs:text-xxs sm:text-sm md:text-base lg:text-base xl:text-base xs:h-[10vh] sm:h-[12vh] md:h-[15vh] lg:h-[15vh] xl:h-[15vh] backdrop-blur-sm text-slate-100 top-0 p-0 flex justify-between items-center z-50`}>
                     <div className="w-1/6 flex h-full justify-center items-center p-2 cursor-pointer" onClick={handleHomePage}>
                         <img className="w-full h-full object-cover" src="./Logo.jpg" alt="" />
                     </div>
@@ -52,7 +53,7 @@ const Navbar = () => {
                         </div>
                         <div className="w-4/5 h-2/3 flex justify-end justify-items-end items-center text-white p-1 gap-1">
                             <div className={`${getLinkClass("/stocks")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`}onClick={handleStocksPage}>Stocks</div>
-                            <div className={`${getLinkClass("/sell")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`}>Sell</div>
+                            <div className={`${getLinkClass("/sell")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`} onClick={handleSellPage}>Sell</div>
                             <div className={`${getLinkClass("/about")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-16 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 border-r-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`} onClick={handleAboutPage}>About Us</div>
                             <div className={`${getLinkClass("/contact")} xl:w-40 lg:w-40 md:w-36 sm:w-16 xs:w-14 xl:h-12 lg:h-10 md:h-9 xs:h-7 flex text-center justify-center items-center border-red-500 border-l-2 cursor-pointer rounded-sm hover:text-slate-300 active:bg-red-600 active:text-white`} onClick={handleContactPage}>Contact</div>
                         </div>

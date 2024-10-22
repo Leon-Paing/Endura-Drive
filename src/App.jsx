@@ -5,19 +5,20 @@ import Home from './Pages/Home';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';import Contact from './Pages/Contact';
 import Stocks from './Pages/Stocks';
 import AboutUs from './Pages/AboutUs';
-;
+import Sell from './Pages/Sell';
 
 function App() {
 
   return (
     <>
-      <div className='w-screen h-auto flex flex-col items-center top-0 bg-gray-800 font-custom tracking-widest'>
+      <div className='w-screen h-auto flex flex-col items-center top-0 bg-slate-900 font-custom tracking-widest'>
         <Router>
           <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/stocks' element={<Stocks/>}></Route>
             <Route path='/contact' element={<Contact/>}></Route>
             <Route path='/about' element={<AboutUs/>}></Route>
+            <Route path='/sell' element={<Sell/>}></Route>
           </Routes>
         </Router>
       </div>

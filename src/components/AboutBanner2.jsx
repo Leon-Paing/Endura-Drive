@@ -19,7 +19,7 @@ const AboutBanner2 = () => {
                     <div className="w-full h-24 text-3xl float-left justify-start items-center">At Endura <span className="text-red-600">Drive</span>,</div>
                     <div className="w-full xl:h-52 float-left text-xl tracking-widest font-sans justify-start text-justify">We pride ourselves on providing an exceptional customer experience, offering transparent deals and personalized services. Our team of automotive experts is here to guide you every step of the way, ensuring you find the perfect vehicle to match your lifestyle.</div>
                     <div className="w-full h-36 flex justify-start items-center">
-                        <div className="w-36 flex text-white bg-red-600 p-4 rounded-md cursor-pointer hover:text-slate-300" onClick={handleContactPage}>Contact Us</div>
+                        <div className="w-36 flex justify-center text-white bg-red-600 p-4 rounded-md cursor-pointer hover:text-slate-300" onClick={handleContactPage}>Contact Us</div>
                     </div>
                 </div>
             </div>

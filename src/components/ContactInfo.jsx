@@ -6,6 +6,18 @@ import { MdAccessTime } from 'react-icons/md';
 
 const ContactInfo = () => {
 
+    const handleFacebookLink = () => {
+        window.open('https://www.facebook.com/porsche');
+    }
+
+    const handleInstagramLink = () => {
+        window.open('https://www.instagram.com/porsche?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==');
+    }
+
+    const handleYoutubeLink = () => {
+        window.open('https://www.youtube.com/@Porsche');
+    }
+
     return(
         <>
         <p className="w-2/3 border-b-0.5 border-slate-500 p-4 flex justify-center items-center mt-10 text-3xl">Contact Us</p>
@@ -15,9 +27,9 @@ const ContactInfo = () => {
                     <div className="flex mt-4 w-1/2"><FaLocationDot className="text-red-600 text-3xl me-2"/>KabarAye Pagoda Road, Yangon, Myanmar</div>
                     <div className="flex mt-4 w-1/2"><FaPhone className="text-red-600 text-base me-1"/>+95 9776357441</div>
                     <div className="flex p-0 justify-start items-center w-1/2 mt-8 gap-4">
-                        <AiFillInstagram className="text-white text-5xl cursor-pointer hover:text-red-600 transition-all duration-300"/>
-                        <AiFillFacebook className="text-white text-5xl cursor-pointer hover:text-blue-600 transition-all duration-300"/>
-                        <AiFillYoutube className="text-white text-6xl cursor-pointer hover:text-red-600 transition-all duration-300"/>
+                        <AiFillInstagram className="text-white text-5xl cursor-pointer hover:text-red-600 transition-all duration-300" onClick={handleInstagramLink}/>
+                        <AiFillFacebook className="text-white text-5xl cursor-pointer hover:text-blue-600 transition-all duration-300" onClick={handleFacebookLink}/>
+                        <AiFillYoutube className="text-white text-6xl cursor-pointer hover:text-red-600 transition-all duration-300" onClick={handleYoutubeLink}/>
                     </div>
                 </div>
 
