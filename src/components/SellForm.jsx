@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { motion, AnimatePresence, easeIn } from "framer-motion";
 
 const SellForm = () => {
 
@@ -7,7 +8,20 @@ const SellForm = () => {
         <>
             <div className="w-screen h-110 flex justify-center items-center border-t-0.5 border-b-0.5">
                 <div className="xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-fill xs:w-full xl:flex lg:flex md:flex sm:hidden xs:hidden h-full  justify-center items-center relative m-0">
-                    <div className="w-full h-full flex justify-center items-center text-5xl absolute">Sell Your Car Here<FaArrowRightLong className="w-20 h-20 ms-10 text-red-600"></FaArrowRightLong></div>
+                    
+                    <div className="w-full h-full flex justify-center items-center text-5xl absolute"
+                    >Sell Your Car Here
+                   <AnimatePresence>
+                     <motion.div className="w-auto h-auto flex justify-center items-center" initial ={{maxWidth:0, opacity:0}}
+                    animate = {{maxWidth: "100%", opacity:1}}
+                    transition={{duration: 2, ease: "easeInOut", repeat: Infinity}}>
+                        <FaArrowRightLong className="w-20 h-20 ms-10 text-red-600
+                    ">
+                    </FaArrowRightLong>
+                    </motion.div>
+                    </AnimatePresence>
+                </div>
+                    
                 </div>
                 <div className="xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-full xs:w-full h-full flex justify-center items-center relative">
                 <img className="w-full h-full object-cover p-0" src="/sellFormSection.jpg" alt="" />

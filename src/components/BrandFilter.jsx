@@ -23,8 +23,8 @@ const BrandFilter = () => {
             animate = {{maxHeight: 411, opacity: 1}}
             exit={{maxHeight:0, opacity:1}}
             transition={{duration: 0.5, ease: "easeOut"}}
-            className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded border-red-600 border-2">
-            {[...new Set(data.map((car) => car.brand))].sort((a, b) => a.localeCompare(b)).map((uniqueBrand, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-red-600 border-0.5" key={index}>{uniqueBrand}</div>))}
+            className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded border-0.5">
+            {[...new Set(data.map((car) => car.brand))].sort((a, b) => a.localeCompare(b)).map((uniqueBrand, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-0.5" key={index}>{uniqueBrand}</div>))}
             </motion.div>)}
             </AnimatePresence>
         </div>

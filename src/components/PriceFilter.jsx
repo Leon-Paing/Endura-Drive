@@ -23,10 +23,10 @@ const PriceFilter = () => {
             animate = {{maxHeight: 411, opacity: 1}}
             exit={{maxHeight:0, opacity:1}}
             transition={{duration: 0.6, ease: "easeOut"}}
-            className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded border-red-600 border-2">
-            <div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-red-600 border-0.5" >Lowest to Highest
+            className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded  border-0.5">
+            <div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer  border-0.5" >Lowest to Highest
             </div>
-            <div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-red-600 border-0.5">Highest to Lowest
+            <div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-0.5">Highest to Lowest
             </div>
             </motion.div>)}
             </AnimatePresence>
