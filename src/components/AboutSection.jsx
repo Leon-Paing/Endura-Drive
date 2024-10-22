@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate,useLocation } from "react-router-dom";
 
-const AboutHomeLink = () => {
+const AboutSection = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -26,4 +26,4 @@ const AboutHomeLink = () => {
     )
 }
 
-export default AboutHomeLink;
+export default AboutSection;
