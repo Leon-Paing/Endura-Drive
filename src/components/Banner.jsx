@@ -14,6 +14,10 @@ const Banner = () => {
         navigate('/contact');
     }
 
+    const handleSell = () => {
+        navigate('/sell');
+    }
+
     const handleStocks = () => {
         navigate('/stocks');
     }
@@ -37,7 +41,7 @@ const Banner = () => {
                 </LazyLoad>
                 <LazyLoad className="flex flex-col xl:w-1/4 lg:w-1/2 md:w-1/2 xs:w-full h-auto justify-center items-center relative cursor-pointer">
                     <img className="w-full h-full object-cover" src="./BannerSell.jpg" alt="" loading="lazy"/> 
-                    <div className="flex flex-col inset-0 w-full h-full absolute justify-center items-start bg-black bg-opacity-50 text-white hover:text-slate-400 transition-colors duration-500 p-4">
+                    <div className="flex flex-col inset-0 w-full h-full absolute justify-center items-start bg-black bg-opacity-50 text-white hover:text-slate-400 transition-colors duration-500 p-4" onClick={handleSell}>
                     <p className="text-lg text-red-600 w-full mb-3">Sell</p>
                     <h2 className="text-2xl w-1/2">We buy and exchange</h2>
                     </div>
