@@ -4,6 +4,7 @@ import './index.css';
 import Home from './Pages/Home';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';import Contact from './Pages/Contact';
 import Stocks from './Pages/Stocks';
+import AboutUs from './Pages/AboutUs';
 ;
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path='/' element={<Home/>}></Route>
             <Route path='/stocks' element={<Stocks/>}></Route>
             <Route path='/contact' element={<Contact/>}></Route>
+            <Route path='/about' element={<AboutUs/>}></Route>
           </Routes>
         </Router>
       </div>

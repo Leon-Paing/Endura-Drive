@@ -7,6 +7,7 @@ export default {
     './src/PagesHome.jsx',
     './src/Pages/Contact.jsx',
     './src/Pages/Stocks.jsx',
+    '/src/Pages/AboutUs.jsx',
     './src/components/Navbar.jsx',
     './src/components/Hero.jsx',
     './src/components/Banner.jsx',
@@ -18,6 +19,10 @@ export default {
     './src/components/ModelFilter.jsx',
     './src/components/YearFilter.jsx',
     './src/components/BodyFilter.jsx',
+    './src/components/AboutHomeLink.jsx',
+    './src/components/AboutBanner1.jsx',
+    './src/components/AboutBanner2.jsx',
+    './src/components/AboutBanner3.jsx',
     
   ],
   theme: {

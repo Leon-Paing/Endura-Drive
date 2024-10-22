@@ -6,6 +6,10 @@ const Banner = () => {
 
     const navigate = useNavigate();
 
+    const handleAboutUs = () => {
+        navigate('/about');
+    }
+
     const handleContactUs = () => {
         navigate('/contact');
     }
@@ -19,7 +23,7 @@ const Banner = () => {
             <div className="flex justify-center items-center flex-wrap w-full h-auto m-0 border-b-0.5 border-red-600 bg-transparent z-0">
                 <LazyLoad className="flex flex-col xl:w-1/4 lg:w-1/2 md:w-1/2 xs:w-full h-auto justify-center items-center relative cursor-pointer ">
                     <img className="w-full h-full object-cover cursor-pointer" src="./BannerAboutUs.jpg" alt="" loading="lazy"/> 
-                    <div className="flex flex-col inset-0 w-full h-full absolute justify-center items-start bg-black bg-opacity-50 text-white hover:text-slate-400 transition-colors duration-500 p-4">
+                    <div className="flex flex-col inset-0 w-full h-full absolute justify-center items-start bg-black bg-opacity-50 text-white hover:text-slate-400 transition-colors duration-500 p-4" onClick={handleAboutUs}>
                     <p className="text-lg text-red-600 float-left w-full mb-3">About</p>
                     <h2 className="text-2xl float-left w-1/2">Know more about us</h2>
                     </div>

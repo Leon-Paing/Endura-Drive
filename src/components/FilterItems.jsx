@@ -9,7 +9,7 @@ const FilterItems = () => {
 
     return(
     <>
-        <div className="flex lg:flex-row xl:flex-row md:flex-row sm:flex-col xs:flex-col w-screen h-auto p-7 mt-4 gap-7 justify-center items-center border-t-0.5 bg-slate-900">
+        <div className="flex lg:flex-row xl:flex-row md:flex-row sm:flex-col xs:flex-col w-screen h-auto p-7 mt-4 gap-7 justify-center items-center border-t-0.5 bg-slate-900 shadow-2xl">
             <BrandFilter/>
             <ModelFilter/>
             <YearFilter/>
