@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import AboutBanner1 from "../components/AboutBanner1";
 import AboutBanner2 from "../components/AboutBanner2";
 import AboutBanner3 from "../components/AboutBanner3";
+import AboutHomeLink from "../components/aboutHomeLink";
 
 const AboutUs = () => {
 

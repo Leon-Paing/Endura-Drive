@@ -19,10 +19,10 @@ export default {
     './src/components/ModelFilter.jsx',
     './src/components/YearFilter.jsx',
     './src/components/BodyFilter.jsx',
-    './src/components/AboutHomeLink.jsx',
     './src/components/AboutBanner1.jsx',
     './src/components/AboutBanner2.jsx',
     './src/components/AboutBanner3.jsx',
+    './src/components/AboutHomeLink.jsx',
     
   ],
   theme: {
