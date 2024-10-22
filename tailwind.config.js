@@ -22,7 +22,7 @@ export default {
     './src/components/AboutBanner1.jsx',
     './src/components/AboutBanner2.jsx',
     './src/components/AboutBanner3.jsx',
-    './src/components/AboutHomeLink.jsx',
+    './src/components/aboutHomeLink.jsx',
     
   ],
   theme: {

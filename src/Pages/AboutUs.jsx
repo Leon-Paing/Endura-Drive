@@ -6,6 +6,7 @@ import AboutBanner2 from "../components/AboutBanner2";
 import AboutBanner3 from "../components/AboutBanner3";
 import AboutHomeLink from "../components/aboutHomeLink";
 
+
 const AboutUs = () => {
 
     return(
