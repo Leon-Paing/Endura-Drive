@@ -1,7 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import AboutHomeLink from "../components/aboutHomeLink";
 import AboutBanner1 from "../components/AboutBanner1";
 import AboutBanner2 from "../components/AboutBanner2";
 import AboutBanner3 from "../components/AboutBanner3";
