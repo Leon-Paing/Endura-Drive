@@ -28,7 +28,7 @@ const AboutBanner3 = () => {
                     <FaLocationDot className="text-red-600 ms-1 xl:block lg:block md:block sm:hidden xs:hidden"></FaLocationDot>,
                     </motion.div>
                     <motion.div className="w-full xl:h-52 float-left text-xl tracking-widest font-sans justify-start text-justify"
-                    initial ={{marginRight:-400, opacity:0}}
+                    initial ={{marginRight:-300, opacity:0}}
                     whileInView={{marginRight:0, opacity:1}}
                     viewport={{once:true, amount:0.5}}
                     transition={{duration: 1.5, ease:"linear"}}
