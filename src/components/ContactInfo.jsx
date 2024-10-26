@@ -25,7 +25,7 @@ const ContactInfo = () => {
                 <div className="xl:w-1/3 lg:w-1/2 md:w-1/2 sm:w-full xs:w-full h-auto flex flex-col justify-center items-center p-3 mb-10">
                     <div className="flex justify-start items-center text-3xl mb-4 ms-2 w-1/2"><span>Endura</span><span className="flex justify-end text-red-600 ms-1 border-b-0.5 border-red-600">Drive</span></div>
                     <div className="flex mt-4 w-1/2"><FaLocationDot className="text-red-600 text-3xl me-2"/>KabarAye Pagoda Road, Yangon, Myanmar</div>
-                    <div className="flex mt-4 w-1/2"><FaPhone className="text-red-600 text-base me-1"/>+95 9776357441</div>
+                    <div className="flex mt-4 w-1/2"><FaPhone className="text-red-600 text-base me-1"/>+95 9773456789</div>
                     <div className="flex p-0 justify-start items-center w-1/2 mt-8 gap-4">
                         <AiFillInstagram className="text-white text-5xl cursor-pointer hover:text-red-600 transition-all duration-300" onClick={handleInstagramLink}/>
                         <AiFillFacebook className="text-white text-5xl cursor-pointer hover:text-blue-600 transition-all duration-300" onClick={handleFacebookLink}/>
