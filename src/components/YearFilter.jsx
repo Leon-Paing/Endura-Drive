@@ -2,36 +2,30 @@ import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowDropdown } from "react-icons/io";
+import { useBrand, useCarList, useModel, useYear } from "../Context/carContext";
 
 const YearFilter = () => {
 
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    const {carList, setCarList} = useCarList();
+    const {selectedYear, setSelectedYear} = useYear();
+    const {selectedBrand, setSelectedBrand} = useBrand();
+    const {selectedModel, useSelectedModel} = useModel();
+
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
-    const sortByYear = (arr) => {
-        let n = arr.length;
-        
-        for (let i = 0; i < n ; i++) {
-          let minIndex = i;
-      
-          for (let j = i + 1; j < n; j++) {
-            if (arr[j] && arr[minIndex] && arr[j].year > arr[minIndex].year) {
-              minIndex = j;
-            }
-          }
 
-          if (arr[i] && arr[minIndex] && minIndex !== i) {
-            let temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
-          }
-        }
-        return arr;
-      }
-
-    const sortedCars = sortByYear(data);
+    const handleSelectedYear = (year) => {
+      setSelectedYear(year);
+      if(carList){
+      const newlist = [...carList.filter((car) =>
+       car.year == year
+       )]
+      setCarList(newlist);}
+      setdropDownVisible(!dropDownVisible);
+  }
 
     return(
     <>
@@ -46,7 +40,7 @@ const YearFilter = () => {
             exit={{maxHeight:0, opacity:1}}
             transition={{duration: 0.5, ease: "easeOut"}}
             className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded  border-0.5">
-            {[...new Set(sortedCars.map((car) => car.year))].map((uniqueYear, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-0.5" key={index}>{uniqueYear}</div>))}
+            {[...new Set(carList.sort((a, b) => b.year - a.year).map((car) => car.year))].map((uniqueYear, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-0.5" key={index} onClick={() => handleSelectedYear(uniqueYear)}>{uniqueYear}</div>))}
             </motion.div>)}
             </AnimatePresence>
         </div>

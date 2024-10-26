@@ -2,14 +2,34 @@ import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowDropdown } from "react-icons/io";
+import { useBody, useBrand, useCarList, useModel, useYear } from "../Context/carContext";
 
 const BrandFilter = () => {
 
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    const {selectedBrand, setSelectedBrand} = useBrand();
+    const {selectedModel, setSelectedModel} = useModel();
+    const {selectedYear, setSelectedYear} = useYear();
+    const {selectedBody, setSelectedBody} = useBody();
+    const {carList, setCarList} = useCarList();
+
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
+
+    const handleSelectedBrand = (brand) => {
+        setSelectedBrand(brand);
+        setSelectedModel('');
+        setSelectedYear();
+        setSelectedBody('');
+        if(carList){
+        const newlist = data.filter((car) => car.brand === brand)
+        
+        setdropDownVisible(!dropDownVisible);
+        setCarList(newlist);}
+    }
+
 
     return(
     <>
@@ -24,7 +44,7 @@ const BrandFilter = () => {
             exit={{maxHeight:0, opacity:1}}
             transition={{duration: 0.5, ease: "easeOut"}}
             className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded border-0.5">
-            {[...new Set(data.map((car) => car.brand))].sort((a, b) => a.localeCompare(b)).map((uniqueBrand, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-0.5" key={index}>{uniqueBrand}</div>))}
+            {[...new Set(data.map((car) => car.brand))].sort((a, b) => a.localeCompare(b)).map((uniqueBrand, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer border-0.5" key={index} onClick={() => handleSelectedBrand(uniqueBrand)}>{uniqueBrand}</div>))}
             </motion.div>)}
             </AnimatePresence>
         </div>

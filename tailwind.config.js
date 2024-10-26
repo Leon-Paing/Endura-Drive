@@ -25,11 +25,20 @@ export default {
     './src/components/AboutBanner3.jsx',
     './src/components/aboutHomeLink.jsx',
     './src/components/SellForm.jsx',
+    './src/components/ServiceTitle.jsx',
+    './src/components/ServiceSection1.jsx',
+    './src/components/ServiceSection2.jsx',
+    './src/components/ServiceSection3.jsx',
+    './src/components/FilteredList.jsx',
   ],
   theme: {
     extend: {
       fontFamily:{
-        "custom": ["Impact, fantasy"]
+        "custom": ["Impact, fantasy"],
+        "lato": ['Lato', 'sans-serif'],
+        "poppins": ['Poppins', 'sans-serif'],
+        "montserrat": ['Montserrat', 'sans-serif'],
+        "oswald": ['Oswald', 'sans-serif'],
       },
       borderWidth:{
         "0.5":"0.5px"
@@ -48,6 +57,7 @@ export default {
         "2/7":"23%",
       },
       height:{
+        "98": "450px",
         "100": "500px",
         "110": "700px",
       },

@@ -6,12 +6,20 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Stocks from './Pages/Stocks';
 import AboutUs from './Pages/AboutUs';
 import Sell from './Pages/Sell';
+import 'typeface-lato';
+import 'typeface-poppins';
+import 'typeface-montserrat';
+import 'typeface-oswald';
+import CarContextProvider from './Context/carContext';
+
 
 function App() {
 
   return (
     <>
-      <div className='w-screen h-auto flex flex-col items-center top-0 bg-slate-900 font-custom tracking-widest'>
+    
+      <div className='w-screen h-auto flex flex-col items-center text-slate-200 top-0 bg-slate-900 font-oswald tracking-widest'>
+        <CarContextProvider>
         <Router>
           <Routes>
             <Route path='/' element={<Home/>}></Route>
@@ -21,7 +29,9 @@ function App() {
             <Route path='/sell' element={<Sell/>}></Route>
           </Routes>
         </Router>
+        </CarContextProvider>
       </div>
+      
     </>
   )
 }

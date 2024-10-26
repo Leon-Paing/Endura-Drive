@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import StockCars from "../components/StockCars";
 import Footer from "../components/Footer";
 import FilterItems from "../components/FilterItems";
+import FilteredList from "../components/FilteredList";
 
 const Stocks = () => {
 
@@ -10,6 +11,7 @@ const Stocks = () => {
         <>
             <Navbar/>
             <FilterItems/>
+            <FilteredList/>
             <StockCars/>
             <Footer/>
         </>

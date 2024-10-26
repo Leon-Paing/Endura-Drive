@@ -2,13 +2,26 @@ import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowDropdown } from "react-icons/io";
+import { useBody, useCarList } from "../Context/carContext";
 
 const BodyFilter = () => {
 
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    const {carList, setCarList} = useCarList();
+    const {selectedBody, setSelectedBody} = useBody();
+
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
+    }
+
+    const handleSelectedBody = (body) => {
+        setSelectedBody(body);
+        if(carList){
+        const newlist = carList.filter((car) => car.bodyType === body)
+        
+        setdropDownVisible(!dropDownVisible);
+        setCarList(newlist);}
     }
 
     return(
@@ -24,7 +37,9 @@ const BodyFilter = () => {
             exit={{maxHeight:0, opacity:1}}
             transition={{duration: 0.5, ease: "easeOut"}}
             className="flex flex-col w-full overflow-y-auto bg-gray-800 backdrop-blur-lg bg-opacity-40 z-40 absolute top-12 transition-all ease-out rounded  border-0.5">
-            {[...new Set(data.map((car) => car.bodyType))].map((uniqueBody, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer  border-0.5" key={index}>{uniqueBody}</div>))}
+            {[...new Set(carList.map((car) => car.bodyType))].map((uniqueBody, index) => (<div className="flex w-full h-auto text-center justify-center items-center p-2 hover:bg-red-600 cursor-pointer  border-0.5" key={index}
+            onClick={()=> handleSelectedBody(uniqueBody)}
+            >{uniqueBody}</div>))}
             </motion.div>)}
             </AnimatePresence>
         </div>
