@@ -34,7 +34,11 @@ export default {
     './src/components/FilteredList.jsx',
     './src/components/NavGarage.jsx',
     './src/components/GarageTilte.jsx',
-    '/src/components/GarageItems.jsx',
+    './src/components/GarageItems.jsx',
+    './src/components/DetailsBanner.jsx',
+    './src/components/DetailsSection1.jsx',
+    './src/components/DetailsSpecifications.jsx',
+    './src/components/DetailsPictures.jsx',
   ],
   theme: {
     extend: {

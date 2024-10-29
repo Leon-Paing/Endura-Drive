@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useGarage } from "../Context/carContext";
+import { useGarage, useLogo } from "../Context/carContext";
 
 const Navbar = () => {
 
@@ -10,6 +10,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const {garage, setGarage} = useGarage();
+    const {logo} = useLogo();
 
     const getLinkClass = (path) => {
         return location.pathname === path ? "text-red-600 pointer-events-none" : "text-white";
@@ -48,7 +49,7 @@ const Navbar = () => {
         <>
             <nav className={`${getClassHome("/")} w-full xs:text-xxs sm:text-sm md:text-base lg:text-base xl:text-base xs:h-[10vh] sm:h-[12vh] md:h-[15vh] lg:h-[15vh] xl:h-[15vh] backdrop-blur-sm text-slate-100 top-0 p-0 flex justify-between items-center z-50`}>
                     <div className="w-1/6 flex h-full justify-center items-center p-2 cursor-pointer" onClick={handleHomePage}>
-                        <img className="w-full h-full object-cover" src="./Logo.jpg" alt="Logo" />
+                        <img className="w-full h-full object-cover" src={logo} alt="Logo" />
                     </div>
                     <div className="w-5/6 h-full flex flex-col justify-end items-end p-0">
                         <div className="w-full h-2/3 flex justify-end justify-items-end items-center text-white pr-0 gap-1 m-0">

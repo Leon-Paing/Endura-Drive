@@ -11,6 +11,11 @@ const GarageItems = () => {
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
     const {garage, setGarage} = useGarage();
 
+    const navigateCarDetails = (car) => {
+        setSelectedCarDetails(car);
+        navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
+    }
+
     const handleCarDetails = (id) => {
         setSelectedCarID(id);
         const carDetails = data.filter((car) => car.id === id);
@@ -43,17 +48,17 @@ const GarageItems = () => {
             <div className="w-full h-auto flex flex-wrap justify-center items-start p-2 gap-8 border-red-600 border-t-0.5 mt-2">
                 {garage.map((item, index) => (
                     <div className="xl:w-1/4 lg:w-2/5 md:w-2/5 sm:w-full xs:w-full
-                     h-[300px] flex flex-col justify-center items-center mb-1 rounded-md" onTouchStart={()=>handleCarDetails(car.id)} onMouseEnter={()=>handleCarDetails(car.id)} key={index}>
-                        <div className="w-full h-auto whitespace-nowrap overflow-hidden p-3 bg-black text-white rounded-tl-md rounded-tr-md text-center text-ellipsis">{item.name}</div>
-                       <div className="w-full h-[250px] relative flex flex-col justify-center items-center p-0 overflow-hidden rounded-tl-sm rounded-tr-sm">
+                     h-[50vh] flex flex-col justify-center items-center mb-1 rounded-md" onTouchStart={()=>handleCarDetails(car.id)} onMouseEnter={()=>handleCarDetails(car.id)} key={index}>
+                        <div className="w-full h-[30vh] whitespace-nowrap overflow-hidden p-3 bg-black text-white rounded-tl-md rounded-tr-md text-center text-ellipsis">{item.name}</div>
+                       <div className="w-full h-[350vh] relative flex flex-col justify-center items-center p-0 overflow-hidden rounded-tl-sm rounded-tr-sm">
                             <img src={item.bannerPic} alt={item.name} className="w-full object-cover h-full" loading="lazy"/>
                             <div className="w-full h-auto flex justify-between items-center p-2 absolute bottom-0 bg-black bg-opacity-50 backdrop-blur-sm">
                                 <div className="text-xs float-start">Price: ${item.price}</div>
                                 <div className="text-xs float-start">Mileage: {item.mileage}km</div>
                             </div>
                        </div> 
-                       <div className="w-full h-full flex justify-center items-center p-3 text-white hover:text-slate-300 cursor-pointer bg-slate-900 border-red-600 border-0.5">Check Details</div>
-                       <div className="w-full h-full flex justify-end items-center p-1 cursor-pointer rounded-bl-md rounded-br-md text-red-600 border-none mt-2" onClick={() => removeFromGarage(item)}>
+                       <div className="w-full h-1/3 flex justify-center items-center p-3 text-white hover:text-slate-300 cursor-pointer bg-slate-900 border-red-600 border-0.5" onClick={()=> navigateCarDetails(item)}>Check Details</div>
+                       <div className="w-full h-full flex justify-end items-center p-1 cursor-pointer rounded-bl-md rounded-br-md text-red-600 border-none" onClick={() => removeFromGarage(item)}>
                         <IoTrash></IoTrash>Remove</div>
                     </div>
                 ))}

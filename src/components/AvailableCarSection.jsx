@@ -4,21 +4,25 @@ import LazyLoad from "react-lazyload";
 import data from "../database/data";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useGarage } from "../Context/carContext";
-
-
+import { useCarDetails, useGarage } from "../Context/carContext";
 
 const AvailableCarSection = () => {
-
-    const {garage, setGarage} = useGarage();
-
-const addToGarage = (car) => {
-    if(!garage.some((item) => item.id === car.id)){
-        setGarage([...garage,car]);
-    }
-}
-
+    
     const navigate = useNavigate();
+    const {garage, setGarage} = useGarage();
+    const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
+    
+    const navigateCarDetails = (car) => {
+        setSelectedCarDetails(car);
+        navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
+    }
+
+    const addToGarage = (car) => {
+        if(!garage.some((item) => item.id === car.id)){
+            setGarage([...garage,car]);
+        }
+    }
+
 
     const handleStocksPage = () => {
         navigate('/stocks');
@@ -76,7 +80,7 @@ const addToGarage = (car) => {
                             </div>
                         </div>
                         
-                        <div className="w-full h-full flex justify-center items-center p-3 bg-red-600 text-white cursor-pointer hover:bg-red-700">Check Details</div>
+                        <div className="w-full h-full flex justify-center items-center p-3 bg-red-600 text-white cursor-pointer hover:bg-red-700" onClick={()=>navigateCarDetails(car)}>Check Details</div>
 
                         <div className="w-full h-full flex justify-center items-center p-3 bg-transparent text-slate-100 border-0.5 border-red-600 rounded-bl-md rounded-br-md hover:text-slate-300 cursor-pointer" onClick={() => addToGarage(car)}>{(garage.includes(car)) ? "Added to Garage " : "Add to Garage"}</div>
                         </LazyLoad>)

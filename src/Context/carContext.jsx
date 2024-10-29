@@ -14,6 +14,7 @@ const CarContextProvider = ({children}) => {
     const [selectedCarID, setSelectedCarID] = useState();
     const [selectedCarDetails, setSelectedCarDetails] = useState();
     const [garage, setGarage] = useState([]);
+    const [logo] = useState('/Logo.jpg');
 
     return(
         <CarContext.Provider value={{
@@ -33,6 +34,7 @@ const CarContextProvider = ({children}) => {
             setSelectedCarDetails,
             garage,
             setGarage,
+            logo,
         }}>
             {children}
         </CarContext.Provider>
@@ -77,6 +79,11 @@ export const useCarDetails = () => {
 export const useGarage = () => {
     const {garage, setGarage} = useContext(CarContext);
     return {garage, setGarage};
+}
+
+export const useLogo = () => {
+    const {logo} = useContext(CarContext);
+    return {logo};
 }
 
 export default CarContextProvider;

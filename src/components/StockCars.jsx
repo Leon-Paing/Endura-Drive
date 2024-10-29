@@ -20,6 +20,7 @@ const StockCars = () => {
     }
 
     const navigateCarDetails = (car) => {
+        setSelectedCarDetails(car);
         navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
     }
 
@@ -34,7 +35,6 @@ const StockCars = () => {
             setGarage([...garage,car]);
         }
     }
-    console.log(garage)
 
     return(
         <>
