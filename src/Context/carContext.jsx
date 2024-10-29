@@ -10,7 +10,10 @@ const CarContextProvider = ({children}) => {
     const [selectedBrand, setSelectedBrand] = useState("");
     const [selectedModel, setSelectedModel] = useState("");
     const [selectedYear, setSelectedYear] = useState();
-    const [selectedBody, setSelectedBody] = useState(""); 
+    const [selectedBody, setSelectedBody] = useState("");
+    const [selectedCarID, setSelectedCarID] = useState();
+    const [selectedCarDetails, setSelectedCarDetails] = useState();
+    const [garage, setGarage] = useState([]);
 
     return(
         <CarContext.Provider value={{
@@ -24,6 +27,12 @@ const CarContextProvider = ({children}) => {
             setSelectedYear,
             selectedBody,
             setSelectedBody,
+            selectedCarID,
+            setSelectedCarID,
+            selectedCarDetails,
+            setSelectedCarDetails,
+            garage,
+            setGarage,
         }}>
             {children}
         </CarContext.Provider>
@@ -55,5 +64,19 @@ export const useBody = () => {
     return {selectedBody, setSelectedBody};
 }
 
+export const useCarID = () => {
+    const {selectedCarID, setSelectedCarID} = useContext(CarContext);
+    return {selectedCarID, setSelectedCarID};
+}
+
+export const useCarDetails = () => {
+    const {selectedCarDetails, setSelectedCarDetails} = useContext(CarContext);
+    return {selectedCarDetails, setSelectedCarDetails};
+}
+
+export const useGarage = () => {
+    const {garage, setGarage} = useContext(CarContext);
+    return {garage, setGarage};
+}
 
 export default CarContextProvider;

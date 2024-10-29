@@ -22,7 +22,7 @@ const FilteredList = () => {
 
     return(
         <>
-            {carList !== data &&<div className="w-full p-2 xl:pl-20 flex xs:justify-start gap-2 text-base flex-wrap">
+            {carList !== data &&<div className="w-full p-2 xl:pl-20 lg:pl-16 md:pl-16 flex xs:justify-start gap-2 text-base flex-wrap">
                 {selectedBrand &&
                     <div className="p-2 border-red-600 border-r-2">{selectedBrand}</div>
                 }

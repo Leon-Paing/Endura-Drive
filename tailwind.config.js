@@ -9,6 +9,8 @@ export default {
     './src/Pages/Stocks.jsx',
     '/src/Pages/AboutUs.jsx',
     '/src/Pages/Sell.jsx',
+    './src/Pages/Garage.jsx',
+    './src/Pages/Details.jsx',
     './src/components/Navbar.jsx',
     './src/components/Hero.jsx',
     './src/components/Banner.jsx',
@@ -30,6 +32,9 @@ export default {
     './src/components/ServiceSection2.jsx',
     './src/components/ServiceSection3.jsx',
     './src/components/FilteredList.jsx',
+    './src/components/NavGarage.jsx',
+    './src/components/GarageTilte.jsx',
+    '/src/components/GarageItems.jsx',
   ],
   theme: {
     extend: {
@@ -37,8 +42,9 @@ export default {
         "custom": ["Impact, fantasy"],
         "lato": ['Lato', 'sans-serif'],
         "poppins": ['Poppins', 'sans-serif'],
-        "montserrat": ['Montserrat', 'sans-serif'],
-        "oswald": ['Oswald', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        oswald: ['Oswald', 'sans-serif'],
+        typewriter: ['"American Typewriter"', 'serif'],
       },
       borderWidth:{
         "0.5":"0.5px"

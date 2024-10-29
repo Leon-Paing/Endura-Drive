@@ -11,6 +11,8 @@ import 'typeface-poppins';
 import 'typeface-montserrat';
 import 'typeface-oswald';
 import CarContextProvider from './Context/carContext';
+import Garage from './Pages/Garage';
+import Details from './Pages/Details';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
             <Route path='/contact' element={<Contact/>}></Route>
             <Route path='/about' element={<AboutUs/>}></Route>
             <Route path='/sell' element={<Sell/>}></Route>
+            <Route path='/garage' element={<Garage/>}></Route>
+            <Route path='/details/:carname' element={<Details/>}></Route>
           </Routes>
         </Router>
         </CarContextProvider>

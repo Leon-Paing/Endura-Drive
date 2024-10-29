@@ -25,7 +25,6 @@ const PriceFilter = () => {
       setdropDownVisible(!dropDownVisible);
     };
 
-    console.log(carList)
 
     return(
     <>

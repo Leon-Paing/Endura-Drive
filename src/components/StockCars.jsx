@@ -1,10 +1,9 @@
 import React from "react";
 import { GiCarWheel } from "react-icons/gi";
-import LazyLoad from "react-lazyload";
-import data from "../database/data";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useCarList } from "../Context/carContext";
+import { useCarDetails, useCarID, useCarList, useGarage } from "../Context/carContext";
 import { motion, AnimatePresence } from "framer-motion";
+import data from "../database/data";
 
 
 const StockCars = () => {
@@ -12,22 +11,39 @@ const StockCars = () => {
     const navigate = useNavigate();
     
     const {carList, setCarList} = useCarList();
+    const {selectedCarID, setSelectedCarID} = useCarID();
+    const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
+    const {garage, setGarage} = useGarage();
 
     const handleContactPage = () => {
         navigate("/contact");
     }
 
-    console.log(carList);
+    const navigateCarDetails = (car) => {
+        navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
+    }
 
+    const handleCarDetails = (id) => {
+        setSelectedCarID(id);
+        const carDetails = data.filter((car) => car.id === id);
+        setSelectedCarDetails(carDetails);
+    }
+
+    const addToGarage = (car) => {
+        if(!garage.some((item) => item.id === car.id)){
+            setGarage([...garage,car]);
+        }
+    }
+    console.log(garage)
 
     return(
         <>
         <AnimatePresence>
             <div className="w-screen h-auto flex flex-col justify-center items-center p-2 m-0">
-                <div className="w-screen h-auto flex flex-wrap justify-start items-center p-3 mt-3 gap-8">
+                <div className="w-screen h-auto flex flex-wrap justify-center items-center p-3 mt-3 gap-8">
                     
                     {carList && carList.map((car, index)=> {
-                        return(<motion.div key={index} className="xl:w-2/7 lg:w-1/2 md:w-1/2 sm:w-1/2 xs:w-full h-[360px] flex flex-col justify-center items-center bg-transparent mb-3 shadow-lg shadow-gray-500 rounded-md"
+                        return(<motion.div onTouchStart={()=>handleCarDetails(car.id)} onMouseEnter={()=>handleCarDetails(car.id)} key={index} className="xl:w-2/7 lg:w-2/5 md:w-2/5 sm:w-1/3 xs:w-full h-[360px] flex flex-col justify-center items-center bg-transparent mb-3 shadow-lg shadow-gray-500 rounded-md"
                         initial={{ opacity: 0.1}}
                         animate = {{opacity: 1}}
                         transition={{duration: 1.5, ease:"linear"}}
@@ -42,14 +58,6 @@ const StockCars = () => {
                             transition={{duration: 1, ease:"linear"}}
                             >Brand New</motion.span>
                         </div>)}
-                        {/* {car.brand == "Nissan" && (<div className="w-full absolute top-0  flex justify-center items-center p-0">
-                            <motion.span className="w-full flex justify-center items-center rounded-sm p-2 backdrop-blur-md font-semibold" style={{backgroundColor: "#991b1b", opacity:"0.9"}}
-                            initial={{opacity:0}}
-                            whileInView={{ opacity:0.9}}
-                            viewport={{once:false, amount:1}}
-                            transition={{duration: 1.5, ease:"linear"}}
-                            >Hot 🔥</motion.span>
-                        </div>)} */}
                             <img className="w-full h-[210px] object-cover" src={car.bannerPic} alt="" loading="lazy"/>
                             <div className="w-full h-auto flex justify-between items-center p-2 absolute bottom-0 bg-black bg-opacity-50 backdrop-blur-sm">
                             
@@ -58,9 +66,9 @@ const StockCars = () => {
                             </div>
                         </div>
                         
-                        <div className="w-full h-full flex justify-center items-center p-3 bg-red-600 text-white cursor-pointer hover:bg-red-700">Check Details</div>
+                        <div className="w-full h-full flex justify-center items-center p-3 bg-red-600 text-white cursor-pointer hover:bg-red-700" onClick={()=>navigateCarDetails(car)}>Check Details</div>
 
-                        <div className="w-full h-full flex justify-center items-center p-3 bg-transparent text-slate-100 border-0.5 border-red-600 rounded-bl-md rounded-br-md hover:text-slate-300 cursor-pointer">Add to My Garage</div>
+                        <div className="w-full h-full flex justify-center items-center p-3 bg-transparent text-slate-100 border-0.5 border-red-600 rounded-bl-md rounded-br-md hover:text-slate-300 cursor-pointer" onClick={() => addToGarage(car)}>{(garage.includes(car)) ? (<span style={{color: "#32CD32"}}>Added to Garage ✔</span>) : "Add to Garage"}</div>
                         </motion.div>)
 
                         

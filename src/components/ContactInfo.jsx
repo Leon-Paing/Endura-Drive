@@ -49,7 +49,7 @@ const ContactInfo = () => {
                     {/* Cheems Doge*/}
                 </div>
             </div>
-            <div className="xl:w-3/4 lg:w-3/4 md:w-full sm:w-full xs:w-full h-auto"><iframe className="w-full h-[400px] rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7012.312601237581!2d96.15106759589035!3d16.83461619469625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194a7a9703cb5%3A0xfab26e49f10b391b!2sKabar%20Aye%20Pagoda%20Rd%2C%20Yangon!5e0!3m2!1sen!2smm!4v1728736393106!5m2!1sen!2smm" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe></div>
+            <div className="xl:w-3/4 lg:w-3/4 md:w-full sm:w-full xs:w-full h-auto bg-slate-900"><iframe className="w-full h-[400px] rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7012.312601237581!2d96.15106759589035!3d16.83461619469625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194a7a9703cb5%3A0xfab26e49f10b391b!2sKabar%20Aye%20Pagoda%20Rd%2C%20Yangon!5e0!3m2!1sen!2smm!4v1728736393106!5m2!1sen!2smm" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe></div>
         </>
     )
 }
