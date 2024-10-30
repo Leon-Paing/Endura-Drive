@@ -33,8 +33,8 @@ Live Site: https://endura-drive.vercel.app/
 - **Details/:car**: Complete specifications for selected item.
 
 ## Project Structure
-- `src/components`: Reusable UI components
-- `src/pages`: Pages include Home, Stocks, Sell, About, Contact, MyGarage, Details
+- `src/components`: Reusable UI components.
+- `src/pages`: Pages include Home, Stocks, Sell, About, Contact, MyGarage, Details.
 - `src/context`: Global state management with context API.
 - `src/database`: Stores local data in project.
 
