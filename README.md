@@ -1,7 +1,5 @@
 # Endura-Drive
 A car dealership and showroom
-=======
-# React + Vite
 
 Endura Drive is a car dealership platform where users can buy, sell, and trade new and used cars. Built with a React frontend, the site provides a seamless, interactive experience for car enthusiasts and dealerships to manage and explore listings.
 
