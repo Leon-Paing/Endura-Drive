@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Garage.jsx
+
 import React from "react";
 import { useCarDetails, useCarID, useGarage } from "../Context/carContext";
 import { useNavigate } from "react-router-dom";
@@ -7,25 +9,36 @@ const GarageItems = () => {
 
     const navigate = useNavigate();
 
+    //custom useCaID hook from Context API which is CarContext.jsx
     const {selectedCarID, setSelectedCarID} = useCarID();
+
+    //custom useCarDetailes hook from Context API which is CarContext.jsx
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
+
+    //custom useGarage hook from Context API which is CarContext.jsx
     const {garage, setGarage} = useGarage();
 
+    //function to navigate /details/:carname via car parameter 
     const navigateCarDetails = (car) => {
-        setSelectedCarDetails(car);
+        setSelectedCarDetails(car); //set state of selectedCarDetails to given parameter 
         navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
     }
 
+    //function to set state of selectedCarDetails
     const handleCarDetails = (id) => {
-        setSelectedCarID(id);
-        const carDetails = data.filter((car) => car.id === id);
-        setSelectedCarDetails(carDetails);
+        setSelectedCarID(id); //set selectedCarID state to given id parameter
+         
+        const carDetails = data.filter((car) => car.id === id);//filter by id from data which is original array and assign new array into carDetails variable
+
+        setSelectedCarDetails(carDetails); //set selectedCarDetails to new array carDetails
     }
 
+    //function to remove an item from garage via car parameter
     const removeFromGarage = (car) => {
-        setGarage(garage.filter((item) => item.id !== car.id));
+        setGarage(garage.filter((item) => item.id !== car.id)); //filer by id in garage which is not the same id as id from car parameter and return new array with filtered items and setGarage state with new array
     }
 
+    //navigate to /stocks route
     const navigateStockPage = () => {
         navigate('/stocks');
     }

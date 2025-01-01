@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Home.jsx
+
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +9,7 @@ const AboutBanner3 = () => {
 
     const navigate = useNavigate();
 
+    //navigate to /contact route
     const handleContactPage = () => {
         navigate('/contact')
     }

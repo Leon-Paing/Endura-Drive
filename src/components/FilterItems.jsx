@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Stocks.jsx
+
 import React from "react";
 import BrandFilter from "./BrandFilter";
 import ModelFilter from "./ModelFilter";

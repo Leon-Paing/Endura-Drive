@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Home.jsx
+
 import React from "react";
 import { GiCarWheel } from "react-icons/gi";
 import LazyLoad from "react-lazyload";
@@ -9,25 +11,32 @@ import { useCarDetails, useGarage } from "../Context/carContext";
 const AvailableCarSection = () => {
     
     const navigate = useNavigate();
+
+    //custom hook useGarage from Context API which is CarContext.jsx
     const {garage, setGarage} = useGarage();
+
+    //custom hook useCarDetails from Context API which is CarContext.jsx
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
     
+    //assign selectedCarDetails to car varibale and navigate to /details/:carname route
     const navigateCarDetails = (car) => {
         setSelectedCarDetails(car);
         navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
     }
 
+    //add to garage via car variable by checking if selectedCarDetails is already in grage by some method which is Javascript built in method for checking existing items in array
     const addToGarage = (car) => {
         if(!garage.some((item) => item.id === car.id)){
             setGarage([...garage,car]);
         }
     }
 
-
+    //navigate to /stocks route
     const handleStocksPage = () => {
         navigate('/stocks');
     }
 
+    //selection sort algorithm that will sort items by price Highest to Lowest
     const selectionSort = (arr) => {
         let n = arr.length;
         

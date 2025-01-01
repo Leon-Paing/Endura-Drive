@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Stocks.jsx
+
 import React from "react";
 import { GiCarWheel } from "react-icons/gi";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -10,26 +12,39 @@ const StockCars = () => {
 
     const navigate = useNavigate();
     
+    //custom useCarList hook from Context API which is CarContext.jsx
     const {carList, setCarList} = useCarList();
+
+    //custom useCarID hook from Context API which is CarContext.jsx
     const {selectedCarID, setSelectedCarID} = useCarID();
+
+    //custom useCarDetails hook from Context API which is CarContext.jsx
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
+
+    //custom useGarage hook from Context API which is CarContext.jsx
     const {garage, setGarage} = useGarage();
 
+    //navigate to /contact route
     const handleContactPage = () => {
         navigate("/contact");
     }
 
+    //assign selectedCarDetails to car varibale and navigate to /details/:carname route
     const navigateCarDetails = (car) => {
         setSelectedCarDetails(car);
         navigate(`/details/${car.name.replace(/\s+/g, '-').toLowerCase()}`)
     }
 
+    //function to set state of selectedCarDetails
     const handleCarDetails = (id) => {
-        setSelectedCarID(id);
-        const carDetails = data.filter((car) => car.id === id);
-        setSelectedCarDetails(carDetails);
+        setSelectedCarID(id); //set selectedCarID state to given id parameter
+
+        const carDetails = data.filter((car) => car.id === id); //filter by id from data which is original array and assign new array into carDetails variable
+
+        setSelectedCarDetails(carDetails);  //set selectedCarDetails to new array carDetails
     }
 
+    //add to garage via car variable by checking if selectedCarDetails is already in grage by some method which is Javascript built in method for checking existing items in array
     const addToGarage = (car) => {
         if(!garage.some((item) => item.id === car.id)){
             setGarage([...garage,car]);
@@ -43,7 +58,7 @@ const StockCars = () => {
                 <div className="w-screen h-auto flex flex-wrap justify-center items-center p-3 mt-3 gap-8">
                     
                     {carList && carList.map((car, index)=> {
-                        return(<motion.div onTouchStart={()=>handleCarDetails(car.id)} onMouseEnter={()=>handleCarDetails(car.id)} key={index} className="xl:w-2/7 lg:w-2/5 md:w-2/5 sm:w-1/3 xs:w-full h-[360px] flex flex-col justify-center items-center bg-transparent mb-3 shadow-lg shadow-gray-500 rounded-md"
+                        return(<motion.div onTouchStart={()=>handleCarDetails(car.id)} onMouseEnter={()=>handleCarDetails(car.id)} key={car.id} className="xl:w-2/7 lg:w-2/5 md:w-2/5 sm:w-1/3 xs:w-full h-[360px] flex flex-col justify-center items-center bg-transparent mb-3 shadow-lg shadow-gray-500 rounded-md"
                         initial={{ opacity: 0.1}}
                         animate = {{opacity: 1}}
                         transition={{duration: 1.5, ease:"linear"}}

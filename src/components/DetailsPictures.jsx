@@ -1,14 +1,15 @@
+//This is a component which is used in /Pages/Details.jsx
+
 import React from "react";
 import { useCarDetails } from "../Context/carContext";
 
 const DetailsPictures = () => {
 
+    //custom useCarDetails hook from Context API which is CarContext.jsx
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
 
     return(
         <>
-            {/* <div className="w-full flex justify-start items-center p-4 text-2xl text-red-600">Detail Pics :</div> */}
-
             {selectedCarDetails && (
                 <div className="w-full h-auto flex flex-wrap p-1">
                     {selectedCarDetails.detailPic.map((pic, index)=> (

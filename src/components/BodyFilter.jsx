@@ -1,3 +1,5 @@
+//This is a component which is used in /components/FilterItems.jsx
+
 import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,22 +8,28 @@ import { useBody, useCarList } from "../Context/carContext";
 
 const BodyFilter = () => {
 
+    //set state to toggle drop down 
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    //custom useCarList hook from Context API which is CarContext.jsx
     const {carList, setCarList} = useCarList();
+
+    //custom useBody hook from Context API which is CarContext.jsx
     const {selectedBody, setSelectedBody} = useBody();
 
+    //function to toggle drop down
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
 
+    //get bodytype via body parameter, setSelectedBody to body parameter which we assigned and filter by body type and show Filtered cars and also set drop down box to display none
     const handleSelectedBody = (body) => {
         setSelectedBody(body);
         if(carList){
-        const newlist = carList.filter((car) => car.bodyType === body)
+        const newlist = carList.filter((car) => car.bodyType === body) //this filters by body type and assign new array to newList parameter
         
         setdropDownVisible(!dropDownVisible);
-        setCarList(newlist);}
+        setCarList(newlist);} // setCarList with new array [newlist]
     }
 
     return(

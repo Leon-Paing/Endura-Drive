@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Sell.jsx
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,6 +9,7 @@ const ServiceSection2 = () => {
 
     const navigate = useNavigate();
 
+    //navigate to /contact route
     const handleContactPage = () => {
         navigate('/contact');
     }

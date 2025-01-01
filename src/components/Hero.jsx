@@ -1,8 +1,12 @@
+//This is a component which is used in /Pages/Home.jsx
+
 import React, { useEffect, useState } from "react";
 import {motion, AnimatePresence, easeInOut, easeIn, easeOut, circInOut} from "framer-motion";
 import LazyLoad from "react-lazyload";
 
 const Hero = () => {
+
+  //array of hero images
   const HeroImages = [
     './CarHero.jpg',
     './CarHero2.jpg',
@@ -11,15 +15,20 @@ const Hero = () => {
     './CarHero5.jpg',
   ];
 
+  //state to detect current index of hero images array
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  //state to detect current image of hero images array
   const [currentHeroImg, setCurrentHeroImg] = useState(HeroImages[currentIndex]);
 
+  //useEffect hook to do asynchronous function
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => {
-          const nextIndex = prevIndex + 1;
-          return nextIndex >= HeroImages.length ? 0 : nextIndex;
+          const nextIndex = prevIndex + 1; //get previous index from state and set new index which is state by adding 1 to previous index
+
+          return nextIndex >= HeroImages.length ? 0 : nextIndex; //check if next index is greater than ot equal to length of HeroImages, if true, set currentIndex to 0 and if its false, set currentIndex to nextIndex
         });
       }, 500);
 
@@ -29,7 +38,7 @@ const Hero = () => {
   }, [HeroImages.length]);
 
   useEffect(() => {
-    setCurrentHeroImg(HeroImages[currentIndex]);
+    setCurrentHeroImg(HeroImages[currentIndex]); //set currentHeroImg state to current index of HeroImages array
   }, [currentIndex, HeroImages]);
 
   return (

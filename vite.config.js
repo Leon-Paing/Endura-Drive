@@ -8,7 +8,7 @@ export default defineConfig({
     postcss: './postcss.config.js',
   },
   server: {
-    host: '0.0.0.0',
+    host: '192.168.1.2',
     port: 4000,       
   },
 });

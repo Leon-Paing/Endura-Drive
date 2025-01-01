@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Home.jsx
+
 import React from "react";
 import LazyLoad from "react-lazyload";
 import { useNavigate } from "react-router-dom";
@@ -6,18 +8,22 @@ const Banner = () => {
 
     const navigate = useNavigate();
 
+    //navigate to /about route
     const handleAboutUs = () => {
         navigate('/about');
     }
 
+    //navigate to /contact route
     const handleContactUs = () => {
         navigate('/contact');
     }
 
+    //navigate to /sell route
     const handleSell = () => {
         navigate('/sell');
     }
 
+    //navigate to /srocks route
     const handleStocks = () => {
         navigate('/stocks');
     }

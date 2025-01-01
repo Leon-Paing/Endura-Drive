@@ -1,3 +1,5 @@
+//This is a component which is used in /components/FilterItems.jsx
+
 import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,20 +8,24 @@ import { useCarList } from "../Context/carContext";
 
 const PriceFilter = () => {
 
+    //set state to toggle drop down
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    //custom useCarList hook from Context API which is CarContext.jsx
     const {carList, setCarList} = useCarList();
 
-
+    //function to toggle dropdown
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
 
-      const PriceLowToHigh = () => {
+    //function to sort items by price Lowest to Highest
+    const PriceLowToHigh = () => {
         setCarList([...carList.sort((a, b) => a.price - b.price)]);
         setdropDownVisible(!dropDownVisible);
-      };
+    };
 
+    //function to sort items by price Highest to Lowest
     const PriceHighToLow = () => {
       setCarList([...carList.sort((a, b) => b.price - a.price)]);
       setdropDownVisible(!dropDownVisible);

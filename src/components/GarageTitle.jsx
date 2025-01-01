@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Garage.jsx
+
 import React from "react";
 
 const GarageTitle = () => {

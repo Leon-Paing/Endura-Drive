@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Contact.jsx
+
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
@@ -6,14 +8,17 @@ import { MdAccessTime } from 'react-icons/md';
 
 const ContactInfo = () => {
 
+    //navigate to Facebook link(which is Porsche for placeholder) by opening new tab
     const handleFacebookLink = () => {
         window.open('https://www.facebook.com/porsche');
     }
 
+    //navigate to Instagram link(which is Porsche for placeholder) by opening new tab
     const handleInstagramLink = () => {
         window.open('https://www.instagram.com/porsche?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==');
     }
 
+    //navigate to Youtube link(which is Porsche for placeholder) by opening new tab
     const handleYoutubeLink = () => {
         window.open('https://www.youtube.com/@Porsche');
     }

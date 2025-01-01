@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Sell.jsx
+
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { motion, AnimatePresence, easeIn } from "framer-motion";

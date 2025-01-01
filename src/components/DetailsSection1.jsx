@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Details.jsx
+
 import React, { useEffect, useState } from "react";
 import { IoArrowUndoSharp } from "react-icons/io5";
 import { useCarDetails } from "../Context/carContext";
@@ -7,8 +9,10 @@ const DetailsSection1 = () => {
 
     const navigate = useNavigate();
 
+    //custom useCarDetails hook from Context API which is CarContext.jsx
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
 
+    //navigate to /stocks route
     const navigateStockPage = () => {
         navigate('/stocks');
     }

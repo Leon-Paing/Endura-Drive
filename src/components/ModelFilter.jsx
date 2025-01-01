@@ -1,3 +1,5 @@
+//This is a component which is used in /components/FilterItems.jsx
+
 import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,22 +8,28 @@ import { useCarList, useModel } from "../Context/carContext";
 
 const ModelFilter = () => {
 
+    //set state to toggle drop down 
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    //custom useCarList hook from Context API which is CarContext.jsx
     const {carList, setCarList} = useCarList();
+
+    //custom useModel hook from Context API which is CarContext.jsx
     const {selectedModel, setSelectedModel} = useModel();
 
+    //function to toggle drop down
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
 
+    //function to filter items by model, setCarList to new array based on selectedModel
     const handleSelectedModel = (model) => {
-        setSelectedModel(model);
+        setSelectedModel(model); //set state to selectedModel
         if(carList){
-        const newlist = data.filter((car) => car.model === model)
+        const newlist = data.filter((car) => car.model === model)  //this filters by model and assign new array to newList parameter
         
-        setdropDownVisible(!dropDownVisible);
-        setCarList(newlist);}
+        setdropDownVisible(!dropDownVisible);//set dropdown to display none
+        setCarList(newlist);} // setCarList with new array [newlist]
     }
     return(
     <>

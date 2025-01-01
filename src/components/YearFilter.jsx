@@ -1,3 +1,5 @@
+//This is a component which is used in /components/FilterItems.jsx
+
 import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,25 +8,35 @@ import { useBrand, useCarList, useModel, useYear } from "../Context/carContext";
 
 const YearFilter = () => {
 
+    //set state to toggle drop down
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    //custom useCarList hook from Context API which is CarContext.jsx
     const {carList, setCarList} = useCarList();
+
+    //custom useYear hook from Context API which is CarContext.jsx
     const {selectedYear, setSelectedYear} = useYear();
+
+    //custom useBrand hook from Context API which is CarContext.jsx
     const {selectedBrand, setSelectedBrand} = useBrand();
+
+    //custom useModel hook from Context API which is CarContext.jsx
     const {selectedModel, useSelectedModel} = useModel();
 
+    //function to toggle dropdown
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
 
+    //function to filter items by year, setCarList to new array based on selectedYear
     const handleSelectedYear = (year) => {
-      setSelectedYear(year);
+      setSelectedYear(year); //set state to selectedYear
       if(carList){
-      const newlist = [...carList.filter((car) =>
-       car.year == year
-       )]
-      setCarList(newlist);}
-      setdropDownVisible(!dropDownVisible);
+      const newlist = [...carList.filter((car) => car.year == year)] //this filters by year and assign new array to newList parameter
+
+      setdropDownVisible(!dropDownVisible);//set dropdown to display none
+      setCarList(newlist);} // setCarList with new array [newlist]
+      
   }
 
     return(

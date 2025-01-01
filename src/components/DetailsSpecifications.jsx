@@ -1,8 +1,11 @@
+//This is a component which is used in /Pages/Details.jsx
+
 import React from "react";
 import { useCarDetails } from "../Context/carContext";
 
 const DetailsSpecifications = () => {
 
+    //custom useCarDetails hook from Context API which is CarContext.jsx
     const {selectedCarDetails, setSelectedCarDetails} = useCarDetails();
 
     return (

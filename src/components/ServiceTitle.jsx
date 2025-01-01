@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Sell.jsx
+
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 

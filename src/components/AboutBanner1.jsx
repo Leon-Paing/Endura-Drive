@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Home.jsx
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,6 +8,7 @@ const AboutBanner1 = () => {
 
     const navigate = useNavigate();
 
+    //navigate to /contact route
     const handleContactPage = () => {
         navigate('/contact')
     }

@@ -1,3 +1,5 @@
+//This is a component which is used in /components/FilterItems.jsx
+
 import React, { useState } from "react";
 import data from "../database/data";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,28 +8,44 @@ import { useBody, useBrand, useCarList, useModel, useYear } from "../Context/car
 
 const BrandFilter = () => {
 
+    //set state to toggle drop down 
     const [dropDownVisible, setdropDownVisible] = useState(false);
 
+    //custom useBrand hook from Context API which is CarContext.jsx
     const {selectedBrand, setSelectedBrand} = useBrand();
+
+    //custom useModel hook from Context API which is CarContext.jsx
     const {selectedModel, setSelectedModel} = useModel();
+
+    //custom useYear hook from Context API which is CarContext.jsx
     const {selectedYear, setSelectedYear} = useYear();
+
+    //custom useBody hook from Context API which is CarContext.jsx
     const {selectedBody, setSelectedBody} = useBody();
+
+    //custom useCarList hook from Context API which is CarContext.jsx
     const {carList, setCarList} = useCarList();
 
+    //function to toggle drop down
     const hanldeDropDownVisible = () => {
         setdropDownVisible(!dropDownVisible);
     }
 
+    //function to filter items by brand name, setCarList to new array based on selectedBrand
     const handleSelectedBrand = (brand) => {
-        setSelectedBrand(brand);
-        setSelectedModel('');
-        setSelectedYear();
-        setSelectedBody('');
+        setSelectedBrand(brand);//set state to selected brand
+
+        setSelectedModel('');//clear selectedModel state for accurate filter by brand name
+
+        setSelectedYear();//clear selectedYear state for accurate filter by brand name
+
+        setSelectedBody('');//clear selectedBody state for accurate filter by brand name
+
         if(carList){
-        const newlist = data.filter((car) => car.brand === brand)
+        const newlist = data.filter((car) => car.brand === brand)  //this filters by brand name and assign new array to newList parameter
         
-        setdropDownVisible(!dropDownVisible);
-        setCarList(newlist);}
+        setdropDownVisible(!dropDownVisible); //set dropdown to display none
+        setCarList(newlist);} // setCarList with new array [newlist]
     }
 
 

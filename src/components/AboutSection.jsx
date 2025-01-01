@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/AboutUs.jsx
+
 import React from "react";
 import { useNavigate,useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,10 +9,12 @@ const AboutSection = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    //navigate to / route (which is home page/index page)
     const handleHomePage = ()=> {
         navigate('/');
     }
 
+    //get route name from browser url and assign it to path variable to change UI
     const getLinkClass = (path) => {
         return location.pathname === path ? "text-red-600 pointer-events-none" : "text-white";
       };

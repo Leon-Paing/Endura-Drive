@@ -1,3 +1,5 @@
+//This is a component which is used in /Pages/Garage.jsx
+
 import React from "react";
 import { IoArrowUndoSharp } from "react-icons/io5";
 import { useGarage } from "../Context/carContext";
@@ -7,8 +9,11 @@ import { GiSteeringWheel } from "react-icons/gi";
 const NavGarage = () => {
 
     const navigate = useNavigate();
+
+    //custom useGarage hook from Context API which is CarContext.jsx
     const {garage, setGarage} = useGarage();
 
+    //navigate to /stocks route
     const navigateStockPage = () => {
         navigate('/stocks');
     }
